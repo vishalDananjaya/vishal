@@ -903,30 +903,73 @@
         }
 
         function saveAppData() {
-            localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
+            try {
+                localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
+            } catch (err) {
+                console.error('Storage save failed:', err);
+                showToast('Storage is full — this image is too large to save. Try a smaller photo or remove an older one.', 'error');
+            }
             renderAllSections();
         }
 
         /* Image File Reader Helper */
+        /* Reads a picked file, downsizes + re-compresses it via canvas so the
+           resulting base64 string stays well under the localStorage quota,
+           then writes it into the target input and shows a live preview. */
         function handleImageFileUpload(fileInput, targetInputId, previewImgId) {
             const file = fileInput.files[0];
             if (!file) return;
 
-            if (file.size > 3 * 1024 * 1024) { // 3MB limit
-                showToast('File size is too large (max 3MB recommended)', 'error');
+            if (!file.type.startsWith('image/')) {
+                showToast('Please select a valid image file', 'error');
+                fileInput.value = '';
+                return;
+            }
+
+            if (file.size > 15 * 1024 * 1024) { // 15MB raw sanity limit
+                showToast('That file is too large to process (max 15MB)', 'error');
+                fileInput.value = '';
                 return;
             }
 
             const reader = new FileReader();
             reader.onload = function(e) {
-                const base64Url = e.target.result;
-                document.getElementById(targetInputId).value = base64Url;
-                if (previewImgId && document.getElementById(previewImgId)) {
-                    const previewEl = document.getElementById(previewImgId);
-                    previewEl.src = base64Url;
-                    previewEl.classList.remove('hidden');
-                }
-                showToast('Photo uploaded successfully!', 'success');
+                const img = new Image();
+                img.onload = function() {
+                    const MAX_DIMENSION = 1280;
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > MAX_DIMENSION || height > MAX_DIMENSION) {
+                        if (width > height) {
+                            height = Math.round(height * (MAX_DIMENSION / width));
+                            width = MAX_DIMENSION;
+                        } else {
+                            width = Math.round(width * (MAX_DIMENSION / height));
+                            height = MAX_DIMENSION;
+                        }
+                    }
+
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+                    const compressedUrl = canvas.toDataURL('image/jpeg', 0.82);
+
+                    document.getElementById(targetInputId).value = compressedUrl;
+                    if (previewImgId && document.getElementById(previewImgId)) {
+                        const previewEl = document.getElementById(previewImgId);
+                        previewEl.src = compressedUrl;
+                        previewEl.classList.remove('hidden');
+                    }
+                    showToast('Photo uploaded & optimized successfully!', 'success');
+                };
+                img.onerror = function() {
+                    showToast('Could not read this image file', 'error');
+                };
+                img.src = e.target.result;
+            };
+            reader.onerror = function() {
+                showToast('Error reading the file', 'error');
             };
             reader.readAsDataURL(file);
         }
