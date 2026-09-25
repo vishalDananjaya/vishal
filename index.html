@@ -343,7 +343,7 @@
             </div>
         </section>
 
-        <!-- Recent Projects Section -->
+        <!-- Recent Projects Section (now data-driven from the same dataset as projects.html) -->
         <section id="recent-projects" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
@@ -359,89 +359,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="recent-projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Smart Agriculture System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-400 border border-brand-500/20 text-xs font-bold tracking-widest uppercase">2026</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 font-bold">IoT & Web</span>
-                            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Smart Agriculture System</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Automated soil moisture & environmental climate control portal built using ESP32 IoT sensors with a real-time dashboard.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">React</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Node.js</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">C++</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                        <span class="text-slate-400"><i class="fa-solid fa-diagram-project mr-1 text-brand-400"></i> Active Demo</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Ruhuna Student Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-accent border border-brand-accent/20 text-xs font-bold tracking-widest uppercase">2025</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20 font-bold">Mobile App</span>
-                            <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">Ruhuna Student Portal</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Cross-platform mobile application providing timetable scheduling, GPA calculators, and university notices for BICT students.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Flutter</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Firebase</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Dart</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                        <span class="text-slate-400"><i class="fa-solid fa-mobile-screen mr-1 text-brand-accent"></i> Mobile App</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Lab Resource Manager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/20 text-xs font-bold tracking-widest uppercase">2025</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Full Stack</span>
-                            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Lab Resource Manager</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Web platform designed for faculty lab hardware booking, inventory tracking, and automated maintenance requests.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">PHP</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">MySQL</span>
-                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Tailwind</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                        <span class="text-slate-400"><i class="fa-solid fa-database mr-1 text-emerald-400"></i> Faculty System</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
-                    </div>
-                </div>
-
+                <!-- Populated by JS from the shared portfolio dataset -->
             </div>
         </section>
 
-        <!-- Recent Achievements Section -->
+        <!-- Recent Achievements Section (now data-driven from the same dataset as achievements.html) -->
         <section id="recent-achievements" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
@@ -457,67 +379,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="recent-achievements-grid">
-                
-                <!-- Achievement 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Hackathon Winner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">1st Place</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Hackathon Champion</span>
-                            <h3 class="text-xl font-bold text-white">Ruhuna Tech Innovation Hackathon</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Awarded 1st place for building an AI crop disease detection app tailored for local agricultural farmers.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
-                        Date: Late 2025
-                    </div>
-                </div>
-
-                <!-- Achievement 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="AWS Certification" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-brand-500/20 backdrop-blur-md text-brand-400 border border-brand-500/30 text-xs font-bold uppercase tracking-wider">AWS Certified</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Certification</span>
-                            <h3 class="text-xl font-bold text-white">AWS Cloud Practitioner</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Earned official AWS certification demonstrating technical proficiency in cloud infrastructure & architecture.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
-                        Issued: 2025
-                    </div>
-                </div>
-
-                <!-- Achievement 3 -->
-                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Dean's List Academic Honor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-emerald-500/20 backdrop-blur-md text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">Academic Excellence</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Faculty Recognition</span>
-                            <h3 class="text-xl font-bold text-white">Dean's Honor Roll List</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Selected for academic excellence in the Faculty of Technology BICT degree program.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
-                        Academic Year 2024/2025
-                    </div>
-                </div>
-
+                <!-- Populated by JS from the shared portfolio dataset -->
             </div>
         </section>
 
@@ -544,6 +406,16 @@
                                 <div>
                                     <h4 class="text-xs text-slate-400 font-bold uppercase tracking-wider">University Email</h4>
                                     <p class="text-slate-200 text-sm font-medium" id="contact-email">vishal.bict@ruh.ac.lk</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 font-bold uppercase tracking-wider">Phone / WhatsApp</h4>
+                                    <p class="text-slate-200 text-sm font-medium" id="contact-phone">+94 77 123 4567</p>
                                 </div>
                             </div>
 
@@ -601,7 +473,7 @@
         </div>
     </footer>
 
-    <!-- Admin Login Modal -->
+    <!-- MODAL 1: Admin Login Modal -->
     <div id="login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
         <div class="relative w-full max-w-md glass-card border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
             <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
@@ -614,6 +486,11 @@
                 </div>
                 <h3 class="font-display text-3xl uppercase tracking-wide text-white">Admin Authentication</h3>
                 <p class="text-xs text-slate-400">Log in to manage portfolio content & projects</p>
+            </div>
+
+            <!-- Login Error Alert Box -->
+            <div id="login-error-msg" class="hidden p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs text-center font-medium">
+                <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Invalid username or password!
             </div>
 
             <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
@@ -641,23 +518,919 @@
         </div>
     </div>
 
+    <!-- MODAL 2: Admin / Content Manager Dashboard -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-2 sm:p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto">
+        <div class="relative w-full max-w-4xl bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden my-6 flex flex-col max-h-[90vh]">
+
+            <!-- Admin Top Header -->
+            <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                            <span>Admin Content Manager</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono">Authenticated: vishal</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">Add, edit, or remove portfolio projects, achievements, and bio</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="handleLogout()" class="px-3 py-1.5 rounded-lg bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white border border-rose-500/30 text-xs font-semibold transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+                    </button>
+                    <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Nav Tabs -->
+            <div class="flex border-b border-slate-800 bg-slate-950/40 overflow-x-auto shrink-0">
+                <button onclick="switchAdminTab('general')" id="tab-btn-general" class="admin-tab-btn px-5 py-3 text-sm font-semibold text-brand-400 border-b-2 border-brand-400 flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-user-gear"></i> Bio & Profile
+                </button>
+                <button onclick="switchAdminTab('projects')" id="tab-btn-projects" class="admin-tab-btn px-5 py-3 text-sm font-semibold text-slate-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-folder-open"></i> Projects (<span id="admin-proj-count">0</span>)
+                </button>
+                <button onclick="switchAdminTab('achievements')" id="tab-btn-achievements" class="admin-tab-btn px-5 py-3 text-sm font-semibold text-slate-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-award"></i> Achievements (<span id="admin-ach-count">0</span>)
+                </button>
+                <button onclick="switchAdminTab('export')" id="tab-btn-export" class="admin-tab-btn px-5 py-3 text-sm font-semibold text-slate-400 border-b-2 border-transparent hover:text-white flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-file-export"></i> Backup & Export JSON
+                </button>
+            </div>
+
+            <!-- Admin Tab Content Body -->
+            <div class="p-6 overflow-y-auto flex-1 space-y-6">
+
+                <!-- TAB 1: GENERAL PROFILE -->
+                <div id="admin-tab-general" class="admin-tab-content space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Full Name</label>
+                            <input type="text" id="admin-name" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Tagline / Degree Title</label>
+                            <input type="text" id="admin-tagline" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Short Bio</label>
+                            <textarea id="admin-bio" rows="3" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white resize-none focus:outline-none focus:border-brand-500"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Profile Image URL</label>
+                            <input type="text" id="admin-avatar" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">University Email</label>
+                            <input type="text" id="admin-email" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone / WhatsApp</label>
+                            <input type="text" id="admin-phone" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">GitHub Link</label>
+                            <input type="text" id="admin-github" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">LinkedIn Link</label>
+                            <input type="text" id="admin-linkedin" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-500">
+                        </div>
+                    </div>
+                    <div class="pt-4 flex justify-end">
+                        <button onclick="saveGeneralProfile()" class="px-5 py-2.5 bg-brand-500 hover:bg-brand-400 text-white font-semibold rounded-lg text-sm flex items-center gap-2 shadow-lg">
+                            <i class="fa-solid fa-floppy-disk"></i> Save Profile Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAB 2: PROJECTS MANAGEMENT -->
+                <div id="admin-tab-projects" class="admin-tab-content hidden space-y-6">
+                    <!-- Add/Edit Project Form -->
+                    <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
+                        <h4 class="text-sm font-bold text-brand-400 uppercase tracking-wider" id="proj-form-title">Add New Project</h4>
+                        <input type="hidden" id="proj-edit-id" value="">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Project Title*</label>
+                                <input type="text" id="proj-title" placeholder="e.g., Ruhuna Library App" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Short Summary*</label>
+                                <input type="text" id="proj-short" placeholder="Brief 1-line overview" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-xs text-slate-300 mb-1">Full Detailed Description*</label>
+                                <textarea id="proj-full" rows="3" placeholder="Explain features, architecture, tools used..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Image URL</label>
+                                <input type="text" id="proj-image" placeholder="https://..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Tech Stack (comma separated)</label>
+                                <input type="text" id="proj-tags" placeholder="Java, MySQL, React, Tailwind" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">GitHub Repository Link</label>
+                                <input type="text" id="proj-github" placeholder="https://github.com/..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Live Demo Link</label>
+                                <input type="text" id="proj-demo" placeholder="https://..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-2 pt-2">
+                            <button type="button" onclick="resetProjectForm()" class="px-4 py-2 bg-slate-800 text-slate-300 hover:text-white rounded-lg text-xs font-medium">Clear</button>
+                            <button type="button" onclick="saveProjectItem()" class="px-4 py-2 bg-brand-500 hover:bg-brand-400 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                                <i class="fa-solid fa-plus"></i> <span id="proj-btn-label">Add Project</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Existing Projects List -->
+                    <div class="space-y-3">
+                        <h5 class="text-xs font-bold text-slate-400 uppercase">Current Projects</h5>
+                        <div id="admin-projects-list" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: ACHIEVEMENTS MANAGEMENT -->
+                <div id="admin-tab-achievements" class="admin-tab-content hidden space-y-6">
+                    <!-- Add/Edit Achievement Form -->
+                    <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
+                        <h4 class="text-sm font-bold text-brand-400 uppercase tracking-wider" id="ach-form-title">Add New Achievement</h4>
+                        <input type="hidden" id="ach-edit-id" value="">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Achievement Title*</label>
+                                <input type="text" id="ach-title" placeholder="e.g., Dean's List Honor" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Issuer / Organization*</label>
+                                <input type="text" id="ach-issuer" placeholder="e.g., University of Ruhuna" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Date Achieved</label>
+                                <input type="text" id="ach-date" placeholder="e.g., Oct 2025" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Certificate / Image URL</label>
+                                <input type="text" id="ach-image" placeholder="https://..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-xs text-slate-300 mb-1">Description*</label>
+                                <textarea id="ach-desc" rows="3" placeholder="Describe the achievement context..." class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white resize-none"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-2 pt-2">
+                            <button type="button" onclick="resetAchievementForm()" class="px-4 py-2 bg-slate-800 text-slate-300 hover:text-white rounded-lg text-xs font-medium">Clear</button>
+                            <button type="button" onclick="saveAchievementItem()" class="px-4 py-2 bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold rounded-lg text-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-plus"></i> <span id="ach-btn-label">Add Achievement</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Existing Achievements List -->
+                    <div class="space-y-3">
+                        <h5 class="text-xs font-bold text-slate-400 uppercase">Current Achievements</h5>
+                        <div id="admin-achievements-list" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: EXPORT / IMPORT DATA -->
+                <div id="admin-tab-export" class="admin-tab-content hidden space-y-6">
+                    <div class="p-5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
+                        <h4 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-brand-400"></i>
+                            <span>Export Data for GitHub Hosting</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Export your dataset as a <code class="text-brand-400 font-mono">.json</code> file. You can back this up or use it to seed initial static data in your GitHub repository.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="exportDataJSON()" class="px-4 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white rounded-lg text-xs font-bold flex items-center gap-2 shadow-md">
+                                <i class="fa-solid fa-download"></i> Download Portfolio JSON
+                            </button>
+                            <button onclick="resetToDefaults()" class="px-4 py-2.5 bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500 hover:text-white rounded-lg text-xs font-semibold transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-rotate-left"></i> Reset to Default BICT Dataset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
+                        <h4 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-up text-brand-accent"></i>
+                            <span>Import Data from Backup JSON</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs">Upload a previously exported portfolio JSON file to instantly sync your data.</p>
+                        <input type="file" id="import-json-file" accept=".json" class="block w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-slate-200 hover:file:bg-slate-700">
+                        <button onclick="importDataJSON()" class="px-4 py-2 bg-brand-accent hover:bg-brand-accentDark text-white rounded-lg text-xs font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-upload"></i> Import & Apply Data
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <script>
-        function handleAdminBtnClick() {
-            document.getElementById('login-modal').classList.remove('hidden');
+        /* ==========================================================================
+           AUTHENTICATION CREDENTIALS & DEFAULTS
+           (Same credentials and dataset shape as projects.html / achievements.html
+           so the three pages share one live CMS via localStorage)
+           ========================================================================== */
+        const AUTH_USER = "vishal";
+        const AUTH_PASS = "Vi20056288$";
+
+        const DEFAULT_DATA = {
+            profile: {
+                name: "Vishal",
+                tagline: "BICT Undergraduate Student | University of Ruhuna",
+                bio: "Passionate Information and Communication Technology student at the University of Ruhuna. Specialized in full-stack software development, database architecture, and mobile computing. Driven by building smart technology solutions to solve real-world problems.",
+                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+                email: "vishal.bict@ruh.ac.lk",
+                phone: "+94 77 123 4567",
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                whatsapp: "https://wa.me/94771234567"
+            },
+            education: [
+                {
+                    degree: "Bachelor of Information and Communication Technology (BICT Honors)",
+                    institution: "University of Ruhuna - Faculty of Technology",
+                    period: "2023 - Present",
+                    details: "Core focus on Software Engineering, Java OOP, Web Development, MySQL Databases, Computer Networks, and Data Structures.",
+                    icon: "fa-graduation-cap"
+                },
+                {
+                    degree: "G.C.E. Advanced Level (Technology Stream)",
+                    institution: "Central College, Matara",
+                    period: "2019 - 2021",
+                    details: "Information and Communication Technology (ICT), Engineering Technology, and Science for Technology.",
+                    icon: "fa-school"
+                }
+            ],
+            techStack: [
+                { name: "Java", icon: "fa-brands fa-java", color: "text-amber-500", category: "Language" },
+                { name: "HTML5", icon: "fa-brands fa-html5", color: "text-orange-500", category: "Frontend" },
+                { name: "CSS3", icon: "fa-brands fa-css3-alt", color: "text-blue-400", category: "Frontend" },
+                { name: "JavaScript", icon: "fa-brands fa-js", color: "text-yellow-400", category: "Frontend" },
+                { name: "Python", icon: "fa-brands fa-python", color: "text-blue-500", category: "Language" },
+                { name: "MySQL / SQL", icon: "fa-solid fa-database", color: "text-emerald-400", category: "Database" },
+                { name: "Git & GitHub", icon: "fa-brands fa-github", color: "text-purple-400", category: "DevOps" },
+                { name: "Tailwind CSS", icon: "fa-solid fa-wind", color: "text-cyan-400", category: "Frontend" },
+                { name: "PHP", icon: "fa-brands fa-php", color: "text-indigo-400", category: "Backend" },
+                { name: "C++", icon: "fa-solid fa-code", color: "text-sky-400", category: "Language" }
+            ],
+            projects: [
+                {
+                    id: "p1",
+                    title: "Ruhuna Campus Automated Library System",
+                    shortDesc: "Complete Java & MySQL web portal for book reservations and student barcode checkouts.",
+                    fullDesc: "Built specifically to streamline student library attendance and catalog search at the Faculty of Technology, University of Ruhuna. Features barcode tracking, automated overdue fines calculation, and responsive admin dashboard.",
+                    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80",
+                    tags: ["Java", "MySQL", "JavaScript", "HTML/CSS"],
+                    github: "https://github.com/example/ruhuna-library",
+                    demo: "https://demo-library.example.com",
+                    date: "Aug 2025"
+                },
+                {
+                    id: "p2",
+                    title: "BICT Student Lecture & Assignment Hub",
+                    shortDesc: "Responsive web management dashboard for daily lectures, hall numbers, and assignment deadlines.",
+                    fullDesc: "Designed for BICT undergraduates to track daily lecture slots, practical lab locations, continuous assessments, and exam countdowns with LocalStorage synchronization.",
+                    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+                    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind"],
+                    github: "https://github.com/example/bict-hub",
+                    demo: "",
+                    date: "May 2025"
+                },
+                {
+                    id: "p3",
+                    title: "AgriTech Crop Disease Assistant",
+                    shortDesc: "Python & Machine Learning web app to detect Sri Lankan plant leaf diseases.",
+                    fullDesc: "Developed as a faculty tech project. Accepts plant photos uploaded by farmers, runs image processing models, and outputs organic treatment suggestions in Sinhala and English.",
+                    image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
+                    tags: ["Python", "SQL", "HTML5", "Bootstrap"],
+                    github: "https://github.com/example/agritech-ruhuna",
+                    demo: "",
+                    date: "Jan 2025"
+                }
+            ],
+            achievements: [
+                {
+                    id: "a1",
+                    title: "Dean's List Award for Academic Excellence",
+                    issuer: "Faculty of Technology, University of Ruhuna",
+                    date: "2024 / 2025",
+                    shortDesc: "Awarded for securing top academic GPA honors in BICT semester examinations.",
+                    fullDesc: "Recognized by the Dean of the Faculty of Technology for exemplary academic distinction across Java programming, data structures, and software engineering modules.",
+                    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+                },
+                {
+                    id: "a2",
+                    title: "1st Runner-Up - Ruhuna Tech Innovation Hackathon",
+                    issuer: "IEEE Student Branch, Ruhuna",
+                    date: "Nov 2025",
+                    shortDesc: "Built an early warning coastal flood monitoring dashboard in 24 hours.",
+                    fullDesc: "Competed among 30+ university developer teams across Sri Lanka. Built a web dashboard connecting IoT sensor streams for Matara and Galle coastal warnings.",
+                    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                }
+            ]
+        };
+
+        let appData = {};
+        let isLoggedIn = false;
+
+        /* Data Loading and Saving (shared 'ruhuna_bict_vishal_portfolio' key with projects.html / achievements.html) */
+        function loadAppData() {
+            const base = JSON.parse(JSON.stringify(DEFAULT_DATA));
+            const stored = localStorage.getItem('ruhuna_bict_vishal_portfolio');
+            let parsed = null;
+            if (stored) {
+                try { parsed = JSON.parse(stored); } catch (e) { parsed = null; }
+            }
+
+            // Defensive merge: fall back to defaults for any section that is
+            // missing or malformed, so a corrupted/partial save from one page
+            // never leaves another page's grid empty.
+            appData = {
+                profile: (parsed && parsed.profile && typeof parsed.profile === 'object') ? { ...base.profile, ...parsed.profile } : base.profile,
+                education: (parsed && Array.isArray(parsed.education) && parsed.education.length) ? parsed.education : base.education,
+                techStack: (parsed && Array.isArray(parsed.techStack) && parsed.techStack.length) ? parsed.techStack : base.techStack,
+                projects: (parsed && Array.isArray(parsed.projects)) ? parsed.projects : base.projects,
+                achievements: (parsed && Array.isArray(parsed.achievements)) ? parsed.achievements : base.achievements
+            };
+
+            // Persist the repaired data so every page stays in sync
+            localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
+
+            // Check session authentication state
+            isLoggedIn = sessionStorage.getItem('vishal_admin_logged') === 'true';
+            updateAdminButtonState();
         }
+
+        function saveAppData() {
+            localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
+            renderAllSections();
+        }
+
+        /* Render Page Content */
+        function renderAllSections() {
+            renderHero();
+            renderRecentProjects();
+            renderRecentAchievements();
+            renderContactInfo();
+            updateAdminCounts();
+        }
+
+        function renderHero() {
+            const p = appData.profile;
+            document.getElementById('nav-brand-name').innerText = p.name;
+
+            const heroName = document.getElementById('hero-name');
+            if (!heroName) return;
+
+            heroName.innerText = p.name;
+            document.getElementById('hero-tagline').innerText = p.tagline;
+            document.getElementById('hero-bio').innerText = p.bio;
+            document.getElementById('hero-avatar').src = p.avatar;
+
+            const socialContainer = document.getElementById('social-links-container');
+            socialContainer.innerHTML = `
+                <a href="${p.github}" target="_blank" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-brand-400 hover:border-brand-500/50 transition-colors">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="${p.linkedin}" target="_blank" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-brand-400 hover:border-brand-500/50 transition-colors">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="mailto:${p.email}" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-brand-400 hover:border-brand-500/50 transition-colors">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+                <a href="${p.whatsapp}" target="_blank" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            `;
+        }
+
+        function renderContactInfo() {
+            const emailEl = document.getElementById('contact-email');
+            if (!emailEl) return;
+            emailEl.innerText = appData.profile.email;
+            const phoneEl = document.getElementById('contact-phone');
+            if (phoneEl) phoneEl.innerText = appData.profile.phone;
+        }
+
+        /* Recent Projects grid — top 3 from the shared dataset, click opens the full item on projects.html */
+        function renderRecentProjects() {
+            const grid = document.getElementById('recent-projects-grid');
+            if (!grid) return;
+            const recent = appData.projects.slice(0, 3);
+
+            if (recent.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">No projects added yet.</div>`;
+                return;
+            }
+
+            grid.innerHTML = recent.map(proj => `
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group cursor-pointer" onclick="goToItem('project', '${proj.id}')">
+                    <div>
+                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/000000/22c55e?text=Project+Preview'">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-400 border border-brand-500/20 text-xs font-bold tracking-widest uppercase">${proj.date || ''}</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">${proj.title}</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">${proj.shortDesc}</p>
+                            <div class="flex flex-wrap gap-1.5 pt-1">
+                                ${proj.tags.map(t => `<span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                        <span class="text-slate-400"><i class="fa-solid fa-diagram-project mr-1 text-brand-400"></i> Project</span>
+                        <span class="text-brand-400 font-bold uppercase tracking-wider">Details &rarr;</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /* Recent Achievements grid — top 3 from the shared dataset, click opens the full item on achievements.html */
+        function renderRecentAchievements() {
+            const grid = document.getElementById('recent-achievements-grid');
+            if (!grid) return;
+            const recent = appData.achievements.slice(0, 3);
+
+            if (recent.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">No achievements added yet.</div>`;
+                return;
+            }
+
+            grid.innerHTML = recent.map(ach => `
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group cursor-pointer" onclick="goToItem('achievement', '${ach.id}')">
+                    <div>
+                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="${ach.image}" alt="${ach.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/000000/22c55e?text=Achievement'">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-brand-500/20 backdrop-blur-md text-brand-400 border border-brand-500/30 text-xs font-bold uppercase tracking-wider">${ach.date || ''}</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-400">${ach.issuer}</span>
+                            <h3 class="text-xl font-bold text-white">${ach.title}</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">${ach.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-brand-400">
+                        View Certificate &rarr;
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /* Send the visitor to the dedicated page and auto-open that item there */
+        function goToItem(type, id) {
+            sessionStorage.setItem('portfolio_pending_item', JSON.stringify({ type, id }));
+            window.location.href = type === 'project' ? 'projects.html' : 'achievements.html';
+        }
+
+        /* ==========================================================================
+           AUTHENTICATION & ADMIN MANAGEMENT
+           ========================================================================== */
+        function handleAdminBtnClick() {
+            if (isLoggedIn) {
+                openAdminModal();
+            } else {
+                openLoginModal();
+            }
+        }
+
+        function openLoginModal() {
+            document.getElementById('login-error-msg').classList.add('hidden');
+            document.getElementById('login-username').value = '';
+            document.getElementById('login-password').value = '';
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
         function closeLoginModal() {
             document.getElementById('login-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            alert("Thank you! Your message has been sent successfully.");
-            document.getElementById('contact-form').reset();
-        }
+
         function handleLoginSubmit(e) {
             e.preventDefault();
-            alert("Admin logged in successfully!");
-            closeLoginModal();
+            const u = document.getElementById('login-username').value.trim();
+            const p = document.getElementById('login-password').value.trim();
+
+            if (u === AUTH_USER && p === AUTH_PASS) {
+                isLoggedIn = true;
+                sessionStorage.setItem('vishal_admin_logged', 'true');
+                updateAdminButtonState();
+                closeLoginModal();
+                openAdminModal();
+                showToast(`Welcome back, Vishal! Authenticated successfully.`, 'success');
+            } else {
+                document.getElementById('login-error-msg').classList.remove('hidden');
+            }
         }
+
+        function handleLogout() {
+            isLoggedIn = false;
+            sessionStorage.removeItem('vishal_admin_logged');
+            updateAdminButtonState();
+            closeAdminModal();
+            showToast('Logged out from admin panel', 'info');
+        }
+
+        function updateAdminButtonState() {
+            const btnLabel = document.getElementById('nav-admin-label');
+            const btnIcon = document.getElementById('nav-admin-icon');
+            if (!btnLabel || !btnIcon) return;
+
+            if (isLoggedIn) {
+                btnLabel.innerText = "Admin Dashboard";
+                btnIcon.className = "fa-solid fa-sliders text-emerald-400";
+            } else {
+                btnLabel.innerText = "Admin Login";
+                btnIcon.className = "fa-solid fa-lock";
+            }
+        }
+
+        function openAdminModal() {
+            if (!isLoggedIn) {
+                openLoginModal();
+                return;
+            }
+
+            const p = appData.profile;
+            document.getElementById('admin-name').value = p.name;
+            document.getElementById('admin-tagline').value = p.tagline;
+            document.getElementById('admin-bio').value = p.bio;
+            document.getElementById('admin-avatar').value = p.avatar;
+            document.getElementById('admin-email').value = p.email;
+            document.getElementById('admin-phone').value = p.phone;
+            document.getElementById('admin-github').value = p.github;
+            document.getElementById('admin-linkedin').value = p.linkedin;
+
+            renderAdminProjectList();
+            renderAdminAchievementList();
+            updateAdminCounts();
+
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchAdminTab(tabName) {
+            document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+                btn.classList.remove('text-brand-400', 'border-brand-400');
+                btn.classList.add('text-slate-400', 'border-transparent');
+            });
+            document.querySelectorAll('.admin-tab-content').forEach(content => content.classList.add('hidden'));
+
+            const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+            const activeContent = document.getElementById(`admin-tab-${tabName}`);
+
+            if (activeBtn && activeContent) {
+                activeBtn.classList.add('text-brand-400', 'border-brand-400');
+                activeBtn.classList.remove('text-slate-400', 'border-transparent');
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        function updateAdminCounts() {
+            const projCount = document.getElementById('admin-proj-count');
+            const achCount = document.getElementById('admin-ach-count');
+            if (projCount) projCount.innerText = appData.projects.length;
+            if (achCount) achCount.innerText = appData.achievements.length;
+        }
+
+        function saveGeneralProfile() {
+            appData.profile.name = document.getElementById('admin-name').value;
+            appData.profile.tagline = document.getElementById('admin-tagline').value;
+            appData.profile.bio = document.getElementById('admin-bio').value;
+            appData.profile.avatar = document.getElementById('admin-avatar').value;
+            appData.profile.email = document.getElementById('admin-email').value;
+            appData.profile.phone = document.getElementById('admin-phone').value;
+            appData.profile.github = document.getElementById('admin-github').value;
+            appData.profile.linkedin = document.getElementById('admin-linkedin').value;
+
+            saveAppData();
+            showToast('Bio & Profile details updated successfully!');
+        }
+
+        /* Admin Projects CRUD */
+        function renderAdminProjectList() {
+            const container = document.getElementById('admin-projects-list');
+            container.innerHTML = appData.projects.map(proj => `
+                <div class="p-3 bg-slate-800/80 rounded-lg flex items-center justify-between gap-4 border border-slate-700">
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <img src="${proj.image}" class="w-10 h-10 rounded object-cover shrink-0" onerror="this.src='https://placehold.co/100x100'">
+                        <div class="truncate">
+                            <h5 class="text-sm font-bold text-white truncate">${proj.title}</h5>
+                            <p class="text-xs text-slate-400 truncate">${proj.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="editProjectItem('${proj.id}')" class="p-1.5 text-brand-400 hover:bg-slate-700 rounded"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button onclick="deleteProjectItem('${proj.id}')" class="p-1.5 text-rose-400 hover:bg-slate-700 rounded"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveProjectItem() {
+            const editId = document.getElementById('proj-edit-id').value;
+            const title = document.getElementById('proj-title').value.trim();
+            const shortDesc = document.getElementById('proj-short').value.trim();
+            const fullDesc = document.getElementById('proj-full').value.trim();
+            const image = document.getElementById('proj-image').value.trim() || 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80';
+            const tagsRaw = document.getElementById('proj-tags').value;
+            const tags = tagsRaw ? tagsRaw.split(',').map(t => t.trim()) : ['Java', 'Web'];
+            const github = document.getElementById('proj-github').value.trim();
+            const demo = document.getElementById('proj-demo').value.trim();
+
+            if (!title || !shortDesc || !fullDesc) {
+                showToast('Please fill in required project fields', 'error');
+                return;
+            }
+
+            if (editId) {
+                const index = appData.projects.findIndex(p => p.id === editId);
+                if (index !== -1) {
+                    appData.projects[index] = { ...appData.projects[index], title, shortDesc, fullDesc, image, tags, github, demo };
+                    showToast('Project updated successfully!');
+                }
+            } else {
+                const newProj = {
+                    id: 'p_' + Date.now(),
+                    title,
+                    shortDesc,
+                    fullDesc,
+                    image,
+                    tags,
+                    github,
+                    demo,
+                    date: 'Recently Added'
+                };
+                appData.projects.unshift(newProj);
+                showToast('New project created!');
+            }
+
+            resetProjectForm();
+            saveAppData();
+            renderAdminProjectList();
+        }
+
+        function editProjectItem(id) {
+            const proj = appData.projects.find(p => p.id === id);
+            if (!proj) return;
+
+            document.getElementById('proj-edit-id').value = proj.id;
+            document.getElementById('proj-title').value = proj.title;
+            document.getElementById('proj-short').value = proj.shortDesc;
+            document.getElementById('proj-full').value = proj.fullDesc;
+            document.getElementById('proj-image').value = proj.image;
+            document.getElementById('proj-tags').value = proj.tags.join(', ');
+            document.getElementById('proj-github').value = proj.github || '';
+            document.getElementById('proj-demo').value = proj.demo || '';
+
+            document.getElementById('proj-form-title').innerText = 'Edit Project';
+            document.getElementById('proj-btn-label').innerText = 'Update Project';
+        }
+
+        function deleteProjectItem(id) {
+            appData.projects = appData.projects.filter(p => p.id !== id);
+            saveAppData();
+            renderAdminProjectList();
+            showToast('Project removed', 'info');
+        }
+
+        function resetProjectForm() {
+            document.getElementById('proj-edit-id').value = '';
+            document.getElementById('proj-title').value = '';
+            document.getElementById('proj-short').value = '';
+            document.getElementById('proj-full').value = '';
+            document.getElementById('proj-image').value = '';
+            document.getElementById('proj-tags').value = '';
+            document.getElementById('proj-github').value = '';
+            document.getElementById('proj-demo').value = '';
+
+            document.getElementById('proj-form-title').innerText = 'Add New Project';
+            document.getElementById('proj-btn-label').innerText = 'Add Project';
+        }
+
+        /* Admin Achievements CRUD */
+        function renderAdminAchievementList() {
+            const container = document.getElementById('admin-achievements-list');
+            container.innerHTML = appData.achievements.map(ach => `
+                <div class="p-3 bg-slate-800/80 rounded-lg flex items-center justify-between gap-4 border border-slate-700">
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <img src="${ach.image}" class="w-10 h-10 rounded object-cover shrink-0" onerror="this.src='https://placehold.co/100x100'">
+                        <div class="truncate">
+                            <h5 class="text-sm font-bold text-white truncate">${ach.title}</h5>
+                            <p class="text-xs text-brand-400 truncate">${ach.issuer}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="editAchievementItem('${ach.id}')" class="p-1.5 text-brand-400 hover:bg-slate-700 rounded"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button onclick="deleteAchievementItem('${ach.id}')" class="p-1.5 text-rose-400 hover:bg-slate-700 rounded"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveAchievementItem() {
+            const editId = document.getElementById('ach-edit-id').value;
+            const title = document.getElementById('ach-title').value.trim();
+            const issuer = document.getElementById('ach-issuer').value.trim();
+            const date = document.getElementById('ach-date').value.trim() || '2025';
+            const image = document.getElementById('ach-image').value.trim() || 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80';
+            const fullDesc = document.getElementById('ach-desc').value.trim();
+
+            if (!title || !issuer || !fullDesc) {
+                showToast('Please fill in required achievement fields', 'error');
+                return;
+            }
+
+            if (editId) {
+                const index = appData.achievements.findIndex(a => a.id === editId);
+                if (index !== -1) {
+                    appData.achievements[index] = { ...appData.achievements[index], title, issuer, date, image, fullDesc, shortDesc: fullDesc };
+                    showToast('Achievement updated!');
+                }
+            } else {
+                const newAch = {
+                    id: 'a_' + Date.now(),
+                    title,
+                    issuer,
+                    date,
+                    image,
+                    shortDesc: fullDesc,
+                    fullDesc
+                };
+                appData.achievements.unshift(newAch);
+                showToast('New achievement added!');
+            }
+
+            resetAchievementForm();
+            saveAppData();
+            renderAdminAchievementList();
+        }
+
+        function editAchievementItem(id) {
+            const ach = appData.achievements.find(a => a.id === id);
+            if (!ach) return;
+
+            document.getElementById('ach-edit-id').value = ach.id;
+            document.getElementById('ach-title').value = ach.title;
+            document.getElementById('ach-issuer').value = ach.issuer;
+            document.getElementById('ach-date').value = ach.date;
+            document.getElementById('ach-image').value = ach.image;
+            document.getElementById('ach-desc').value = ach.fullDesc;
+
+            document.getElementById('ach-form-title').innerText = 'Edit Achievement';
+            document.getElementById('ach-btn-label').innerText = 'Update Achievement';
+        }
+
+        function deleteAchievementItem(id) {
+            appData.achievements = appData.achievements.filter(a => a.id !== id);
+            saveAppData();
+            renderAdminAchievementList();
+            showToast('Achievement removed', 'info');
+        }
+
+        function resetAchievementForm() {
+            document.getElementById('ach-edit-id').value = '';
+            document.getElementById('ach-title').value = '';
+            document.getElementById('ach-issuer').value = '';
+            document.getElementById('ach-date').value = '';
+            document.getElementById('ach-image').value = '';
+            document.getElementById('ach-desc').value = '';
+
+            document.getElementById('ach-form-title').innerText = 'Add New Achievement';
+            document.getElementById('ach-btn-label').innerText = 'Add Achievement';
+        }
+
+        /* Export / Import Data */
+        function exportDataJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "vishal-bict-portfolio.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+            showToast('Exported vishal-bict-portfolio.json successfully!');
+        }
+
+        function importDataJSON() {
+            const fileInput = document.getElementById('import-json-file');
+            if (!fileInput.files.length) {
+                showToast('Please select a JSON backup file first', 'error');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (parsed.profile && parsed.projects) {
+                        appData = parsed;
+                        saveAppData();
+                        showToast('Portfolio JSON restored successfully!');
+                        closeAdminModal();
+                    } else {
+                        showToast('Invalid portfolio backup file', 'error');
+                    }
+                } catch (err) {
+                    showToast('Error parsing JSON file', 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetToDefaults() {
+            appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+            saveAppData();
+            showToast('Reset to default BICT dataset!');
+            closeAdminModal();
+        }
+
+        /* Contact Form */
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            showToast(`Thank you ${name}! Your message has been sent.`, 'success');
+            document.getElementById('contact-form').reset();
+        }
+
+        /* Toast Notifications */
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+
+            const bgColor = type === 'error' ? 'bg-rose-950/90 border-rose-500' :
+                           type === 'info' ? 'bg-slate-900/90 border-brand-500' :
+                           'bg-emerald-950/90 border-emerald-500';
+
+            const icon = type === 'error' ? 'fa-circle-xmark text-rose-400' :
+                         type === 'info' ? 'fa-circle-info text-brand-400' :
+                         'fa-circle-check text-emerald-400';
+
+            toast.className = `p-4 rounded-xl border text-slate-100 text-xs font-medium shadow-2xl flex items-center gap-3 backdrop-blur-md transform transition-all duration-300 translate-y-2 opacity-0 ${bgColor}`;
+            toast.innerHTML = `
+                <i class="fa-solid ${icon} text-base"></i>
+                <span class="flex-1">${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        /* Highlight the current page in the nav */
+        function setActiveNavLink() {
+            const page = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const linkPage = link.getAttribute('href').split('#')[0] || 'index.html';
+                if (linkPage === page || (page === '' && linkPage === 'index.html')) {
+                    link.classList.add('text-brand-400', 'bg-slate-800/80');
+                } else {
+                    link.classList.remove('text-brand-400', 'bg-slate-800/80');
+                }
+            });
+        }
+
+        /* Initialize Page */
+        window.onload = function() {
+            loadAppData();
+            renderAllSections();
+            setActiveNavLink();
+            document.getElementById('current-year').innerText = new Date().getFullYear();
+        };
     </script>
 </body>
 </html>
