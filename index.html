@@ -8,10 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <!-- Google Fonts: Bebas Neue (Display), Playfair Display (Serif/Logo), Plus Jakarta Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -33,8 +33,9 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        display: ['Bebas Neue', 'sans-serif']
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -55,7 +56,7 @@
         body {
             background-color: #000000;
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
 
@@ -116,43 +117,39 @@
     <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo / Student Branding -->
+                <!-- Logo / Student Branding using Editorial Serif Style -->
                 <a href="index.html#me" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <div>
-                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-400 transition-colors" id="nav-brand-name">Vishal Portfolio</span>
-                        <span class="block text-xs text-brand-400 font-mono">BICT | Uni of Ruhuna</span>
+                        <span class="font-serif font-bold text-xl tracking-tight text-white group-hover:text-brand-400 transition-colors" id="nav-brand-name">Vishal</span>
+                        <span class="block text-[11px] text-brand-400 font-sans tracking-widest uppercase font-semibold">BICT | Uni of Ruhuna</span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-1">
-                    <a href="index.html#me" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
+                <nav class="hidden md:flex items-center space-x-1 uppercase text-xs font-bold tracking-wider">
+                    <a href="index.html#me" class="nav-link px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
                         <i class="fa-solid fa-user-astronaut text-brand-400 mr-2"></i>Me
                     </a>
-                    <a href="projects.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
+                    <a href="#education" class="nav-link px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
+                        <i class="fa-solid fa-graduation-cap text-emerald-400 mr-2"></i>Education
+                    </a>
+                    <a href="projects.html" class="nav-link px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
                         <i class="fa-solid fa-code text-brand-accent mr-2"></i>Projects
                     </a>
-                    <a href="achievements.html" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
+                    <a href="achievements.html" class="nav-link px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
                         <i class="fa-solid fa-trophy text-brand-400 mr-2"></i>Achievements
                     </a>
-                    <a href="index.html#contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
+                    <a href="index.html#contact" class="nav-link px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors">
                         <i class="fa-solid fa-paper-plane text-emerald-400 mr-2"></i>Contact
                     </a>
 
-                    <!-- Global Header Search -->
-                    <div class="relative ml-2" id="header-search-wrap">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
-                        <input type="text" id="header-search" oninput="handleHeaderSearch()" onfocus="handleHeaderSearch()" autocomplete="off" placeholder="Search site..." class="w-44 lg:w-56 pl-8 pr-3 py-2 bg-slate-900/80 border border-slate-700 rounded-lg text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:w-64 transition-all">
-                        <div id="header-search-results" class="hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto glass-card border border-slate-700 rounded-xl shadow-2xl z-50 p-2 space-y-1"></div>
-                    </div>
-
                     <div class="h-5 w-px bg-slate-700 mx-2"></div>
                     
-                    <!-- Admin Login / Manage Button -->
-                    <button id="nav-admin-btn" onclick="handleAdminBtnClick()" class="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-accent hover:from-brand-500 hover:to-brand-accentDark transition-all shadow-md shadow-brand-500/20 flex items-center gap-2">
+                    <!-- Admin Login Button -->
+                    <button id="nav-admin-btn" onclick="handleAdminBtnClick()" class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-600 to-brand-accent hover:from-brand-500 hover:to-brand-accentDark transition-all shadow-md shadow-brand-500/20 flex items-center gap-2">
                         <i class="fa-solid fa-lock" id="nav-admin-icon"></i>
                         <span id="nav-admin-label">Admin Login</span>
                     </button>
@@ -160,9 +157,9 @@
 
                 <!-- Mobile Top Header Right Action -->
                 <div class="md:hidden flex items-center gap-2">
-                    <button onclick="handleAdminBtnClick()" class="p-2 text-brand-400 hover:bg-slate-800 rounded-lg text-sm flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5">
+                    <button onclick="handleAdminBtnClick()" class="p-2 text-brand-400 hover:bg-slate-800 rounded-lg text-xs flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 uppercase font-bold tracking-wider">
                         <i class="fa-solid fa-lock text-xs"></i>
-                        <span class="text-xs font-mono">Admin</span>
+                        <span>Admin</span>
                     </button>
                 </div>
             </div>
@@ -171,43 +168,48 @@
 
     <!-- Floating Mobile Bottom Navigation Bar -->
     <nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md bg-slate-950/90 backdrop-blur-xl border border-brand-500/30 rounded-2xl p-2 flex justify-around items-center z-50 shadow-2xl shadow-brand-500/10">
-        <a href="index.html#me" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-400 focus:text-brand-400 text-xs font-medium transition-colors py-1 px-2">
+        <a href="index.html#me" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-400 focus:text-brand-400 text-[10px] font-bold uppercase tracking-wider transition-colors py-1 px-2">
             <i class="fa-solid fa-user-astronaut text-lg"></i>
             <span>Me</span>
         </a>
-        <a href="projects.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-accent focus:text-brand-accent text-xs font-medium transition-colors py-1 px-2">
+        <a href="#education" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-400 focus:text-brand-400 text-[10px] font-bold uppercase tracking-wider transition-colors py-1 px-2">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+            <span>Education</span>
+        </a>
+        <a href="projects.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-accent focus:text-brand-accent text-[10px] font-bold uppercase tracking-wider transition-colors py-1 px-2">
             <i class="fa-solid fa-code text-lg"></i>
             <span>Projects</span>
         </a>
-        <a href="achievements.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-400 focus:text-brand-400 text-xs font-medium transition-colors py-1 px-2">
+        <a href="achievements.html" class="flex flex-col items-center gap-1 text-slate-400 hover:text-brand-400 focus:text-brand-400 text-[10px] font-bold uppercase tracking-wider transition-colors py-1 px-2">
             <i class="fa-solid fa-trophy text-lg"></i>
             <span>Honors</span>
         </a>
-        <a href="index.html#contact" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 focus:text-emerald-400 text-xs font-medium transition-colors py-1 px-2">
+        <a href="index.html#contact" class="flex flex-col items-center gap-1 text-slate-400 hover:text-emerald-400 focus:text-emerald-400 text-[10px] font-bold uppercase tracking-wider transition-colors py-1 px-2">
             <i class="fa-solid fa-paper-plane text-lg"></i>
             <span>Contact</span>
         </a>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 py-8">
 
-        <!-- Hero Section -->
+        <!-- Hero Section with Ultra-Condensed Big Display Title style -->
         <section id="me" class="pt-4 sm:pt-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
                 <!-- Left Bio -->
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs sm:text-sm font-medium">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold uppercase tracking-widest">
                         <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
                         <i class="fa-solid fa-university"></i>
                         <span>Faculty of Technology, Uni of Ruhuna</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    <!-- Main Display Heading using Bebas Neue style -->
+                    <h1 class="font-display text-6xl sm:text-7xl lg:text-8xl tracking-wider text-white leading-none uppercase">
                         Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-brand-accent glow-text" id="hero-name">Vishal</span>
                     </h1>
 
-                    <p class="text-lg sm:text-xl text-slate-300 font-mono font-medium" id="hero-tagline">
+                    <p class="text-lg sm:text-xl text-slate-300 font-medium tracking-wide uppercase font-sans" id="hero-tagline">
                         BICT Undergraduate Student
                     </p>
 
@@ -215,13 +217,13 @@
                         Passionate Information and Communication Technology student at the University of Ruhuna. Specialized in full-stack software development, database architecture, and mobile computing. Driven by building smart technology solutions to solve real-world problems.
                     </p>
 
-                    <!-- Evenly Balanced CTA Buttons -->
+                    <!-- Evenly Balanced CTA Buttons with Image tracking style -->
                     <div class="flex items-center gap-3 pt-2">
-                        <a href="projects.html" class="flex-1 sm:flex-none h-11 px-5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white text-sm font-semibold shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            <span>View Projects</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <a href="projects.html" class="flex-1 sm:flex-none h-12 px-6 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white text-xs font-bold tracking-widest uppercase shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                            <span>View Work</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
-                        <a href="index.html#contact" class="flex-1 sm:flex-none h-11 px-5 rounded-xl glass-card hover:bg-slate-800 text-slate-200 text-sm font-semibold transition-all border border-slate-700/60 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <a href="index.html#contact" class="flex-1 sm:flex-none h-12 px-6 rounded-xl glass-card hover:bg-slate-800 text-slate-200 text-xs font-bold tracking-widest uppercase transition-all border border-slate-700/60 flex items-center justify-center gap-2 whitespace-nowrap">
                             <i class="fa-solid fa-envelope text-brand-400 text-xs"></i>
                             <span>Contact Me</span>
                         </a>
@@ -241,17 +243,16 @@
                 <!-- Right Profile Card -->
                 <div class="lg:col-span-5 flex justify-center">
                     <div class="relative w-full max-w-sm">
-                        <!-- Gradient Glow -->
                         <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-brand-accent rounded-3xl blur-2xl opacity-25 animate-pulse-slow"></div>
                         
                         <div class="relative glass-card p-6 rounded-3xl text-center space-y-6">
                             <div class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-2xl overflow-hidden border-2 border-brand-500/40 shadow-2xl">
-                                <img id="hero-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Vishal Profile Picture" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/000000/22c55e?text=Vishal+BICT'">
+                                <img id="hero-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Vishal Profile Picture" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
                             </div>
 
                             <div class="space-y-2">
-                                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold inline-flex items-center gap-1.5">
-                                    <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Open for Tech Internships
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[11px] font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Available For Projects
                                 </span>
                                 <h3 class="text-slate-300 font-medium text-xs pt-2">
                                     <i class="fa-solid fa-location-dot text-brand-400 mr-1.5"></i>Karagoda Uyangoda, Kamburupitiya, Matara
@@ -264,17 +265,95 @@
             </div>
         </section>
 
-        <!-- Recent Projects Section (3 Updates With Images) -->
+        <!-- Education Section -->
+        <section id="education" class="space-y-6 scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-display text-4xl sm:text-5xl tracking-wide uppercase text-white flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-brand-400 text-3xl"></i>
+                        <span>Education</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm mt-0.5">My academic path & qualifications</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Degree -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-university"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Undergraduate Degree</span>
+                            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-brand-400 transition-colors">Bachelor of ICT (Honours)</h3>
+                            <p class="text-slate-300 text-sm font-medium">Faculty of Technology, Uni of Ruhuna</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Specializing in Software Engineering, Web & Mobile Development, Database Architecture, and Computer Networks.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                        <span>2023 - Present</span>
+                        <span class="text-emerald-400">Undergraduate</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: High School -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">G.C.E. Advanced Level</span>
+                            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-brand-accent transition-colors">Engineering Technology Stream</h3>
+                            <p class="text-slate-300 text-sm font-medium">Secondary Education</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Successfully completed G.C.E. A/Ls with focus on Engineering Technology, Science for Technology, and ICT.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                        <span>Completed</span>
+                        <span class="text-brand-accent">Distinction</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Diploma / Certification -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4 flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Diploma & Training</span>
+                            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-emerald-400 transition-colors">Diploma in Software Dev</h3>
+                            <p class="text-slate-300 text-sm font-medium">Vocational Tech Institute</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Practical training in full-stack web stack, OOP programming principles, SQL databases, and UI/UX design.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                        <span>Certified</span>
+                        <span class="text-emerald-400">Completed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Projects Section -->
         <section id="recent-projects" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
-                        <i class="fa-solid fa-code text-brand-accent"></i>
+                    <h2 class="font-display text-4xl sm:text-5xl tracking-wide uppercase text-white flex items-center gap-3">
+                        <i class="fa-solid fa-code text-brand-accent text-3xl"></i>
                         <span>Recent Projects</span>
                     </h2>
-                    <p class="text-slate-400 text-sm mt-1">Highlights of recent software & technology projects</p>
+                    <p class="text-slate-400 text-sm mt-0.5">Highlights of recent software & technology projects</p>
                 </div>
-                <a href="projects.html" class="text-xs text-brand-400 hover:text-white flex items-center gap-1 font-mono transition-colors self-start sm:self-auto">
+                <a href="projects.html" class="text-xs text-brand-400 hover:text-white flex items-center gap-1 font-bold uppercase tracking-widest transition-colors self-start sm:self-auto">
                     View All Projects <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -284,98 +363,95 @@
                 <!-- Project 1 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Project Image -->
-                        <div class="relative h-44 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Smart Agriculture System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-400 border border-brand-500/20 text-xs font-mono font-semibold">2026</span>
+                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Smart Agriculture System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-400 border border-brand-500/20 text-xs font-bold tracking-widest uppercase">2026</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="inline-block text-[11px] font-mono px-2.5 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 font-semibold">IoT & Web</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">Smart Agriculture System</h3>
+                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 font-bold">IoT & Web</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Smart Agriculture System</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Automated soil moisture & environmental climate control portal built using ESP32 IoT sensors with a real-time dashboard.
                             </p>
                             <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">React</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Node.js</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">C++</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">React</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Node.js</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">C++</span>
                             </div>
                         </div>
                     </div>
                     <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
                         <span class="text-slate-400"><i class="fa-solid fa-diagram-project mr-1 text-brand-400"></i> Active Demo</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-mono">Details &rarr;</a>
+                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Project Image -->
-                        <div class="relative h-44 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Ruhuna Student Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-accent border border-brand-accent/20 text-xs font-mono font-semibold">2025</span>
+                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Ruhuna Student Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-brand-accent border border-brand-accent/20 text-xs font-bold tracking-widest uppercase">2025</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="inline-block text-[11px] font-mono px-2.5 py-0.5 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20 font-semibold">Mobile App</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition-colors">Ruhuna Student Portal</h3>
+                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20 font-bold">Mobile App</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">Ruhuna Student Portal</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Cross-platform mobile application providing timetable scheduling, GPA calculators, and university notices for BICT students.
                             </p>
                             <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Flutter</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Firebase</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Dart</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Flutter</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Firebase</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Dart</span>
                             </div>
                         </div>
                     </div>
                     <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
                         <span class="text-slate-400"><i class="fa-solid fa-mobile-screen mr-1 text-brand-accent"></i> Mobile App</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-mono">Details &rarr;</a>
+                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Project Image -->
-                        <div class="relative h-44 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Lab Resource Manager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/20 text-xs font-mono font-semibold">2025</span>
+                        <div class="relative h-48 sm:h-52 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Lab Resource Manager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/20 text-xs font-bold tracking-widest uppercase">2025</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="inline-block text-[11px] font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">Full Stack</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Lab Resource Manager</h3>
+                            <span class="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Full Stack</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Lab Resource Manager</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Web platform designed for faculty lab hardware booking, inventory tracking, and automated maintenance requests.
                             </p>
                             <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">PHP</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">MySQL</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Tailwind</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">PHP</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">MySQL</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800">Tailwind</span>
                             </div>
                         </div>
                     </div>
                     <div class="px-5 py-3.5 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs">
                         <span class="text-slate-400"><i class="fa-solid fa-database mr-1 text-emerald-400"></i> Faculty System</span>
-                        <a href="projects.html" class="text-brand-400 hover:underline font-mono">Details &rarr;</a>
+                        <a href="projects.html" class="text-brand-400 hover:underline font-bold uppercase tracking-wider">Details &rarr;</a>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Recent Achievements Section (3 Updates With Images) -->
+        <!-- Recent Achievements Section -->
         <section id="recent-achievements" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
-                        <i class="fa-solid fa-trophy text-brand-400"></i>
+                    <h2 class="font-display text-4xl sm:text-5xl tracking-wide uppercase text-white flex items-center gap-3">
+                        <i class="fa-solid fa-trophy text-brand-400 text-3xl"></i>
                         <span>Recent Achievements</span>
                     </h2>
-                    <p class="text-slate-400 text-sm mt-1">Key honors, certifications, and hackathon milestones</p>
+                    <p class="text-slate-400 text-sm mt-0.5">Key honors, certifications, and hackathon milestones</p>
                 </div>
-                <a href="achievements.html" class="text-xs text-brand-400 hover:text-white flex items-center gap-1 font-mono transition-colors self-start sm:self-auto">
+                <a href="achievements.html" class="text-xs text-brand-400 hover:text-white flex items-center gap-1 font-bold uppercase tracking-widest transition-colors self-start sm:self-auto">
                     View All Achievements <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -385,20 +461,19 @@
                 <!-- Achievement 1 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Achievement Image -->
-                        <div class="relative h-40 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Hackathon Winner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-mono font-semibold">1st Place</span>
+                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Hackathon Winner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">1st Place</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="text-xs font-mono text-amber-400 uppercase tracking-wider font-semibold">Hackathon Champion</span>
-                            <h3 class="text-lg font-bold text-white">Ruhuna Tech Innovation Hackathon</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Hackathon Champion</span>
+                            <h3 class="text-xl font-bold text-white">Ruhuna Tech Innovation Hackathon</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Awarded 1st place for building an AI crop disease detection app tailored for local agricultural farmers.
                             </p>
                         </div>
                     </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-mono text-slate-500">
+                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
                         Date: Late 2025
                     </div>
                 </div>
@@ -406,20 +481,19 @@
                 <!-- Achievement 2 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Achievement Image -->
-                        <div class="relative h-40 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="AWS Certification" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-brand-500/20 backdrop-blur-md text-brand-400 border border-brand-500/30 text-xs font-mono font-semibold">AWS Certified</span>
+                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="AWS Certification" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-brand-500/20 backdrop-blur-md text-brand-400 border border-brand-500/30 text-xs font-bold uppercase tracking-wider">AWS Certified</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="text-xs font-mono text-brand-400 uppercase tracking-wider font-semibold">Certification</span>
-                            <h3 class="text-lg font-bold text-white">AWS Cloud Practitioner</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Certification</span>
+                            <h3 class="text-xl font-bold text-white">AWS Cloud Practitioner</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Earned official AWS certification demonstrating technical proficiency in cloud infrastructure & architecture.
                             </p>
                         </div>
                     </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-mono text-slate-500">
+                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
                         Issued: 2025
                     </div>
                 </div>
@@ -427,20 +501,19 @@
                 <!-- Achievement 3 -->
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
                     <div>
-                        <!-- Achievement Image -->
-                        <div class="relative h-40 w-full overflow-hidden border-b border-slate-800/80">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Dean's List Academic Honor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-emerald-500/20 backdrop-blur-md text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold">Academic Excellence</span>
+                        <div class="relative h-44 sm:h-48 w-full overflow-hidden border-b border-slate-800/80 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Dean's List Academic Honor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-emerald-500/20 backdrop-blur-md text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">Academic Excellence</span>
                         </div>
                         <div class="p-5 space-y-3">
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider font-semibold">Faculty Recognition</span>
-                            <h3 class="text-lg font-bold text-white">Dean's Honor Roll List</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Faculty Recognition</span>
+                            <h3 class="text-xl font-bold text-white">Dean's Honor Roll List</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Selected for academic excellence in the Faculty of Technology BICT degree program.
                             </p>
                         </div>
                     </div>
-                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-mono text-slate-500">
+                    <div class="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 text-xs font-bold uppercase tracking-wider text-slate-500">
                         Academic Year 2024/2025
                     </div>
                 </div>
@@ -453,11 +526,11 @@
             <div class="max-w-5xl mx-auto glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     
-                    <!-- Left: Info Cards -->
+                    <!-- Left Info -->
                     <div class="lg:col-span-5 space-y-6">
                         <div>
-                            <span class="text-emerald-400 font-mono text-sm font-semibold uppercase tracking-wider">Contact & Inquiries</span>
-                            <h2 class="text-3xl font-extrabold text-white mt-1">Let's Connect</h2>
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Contact & Inquiries</span>
+                            <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-wide text-white mt-1">Let's Connect</h2>
                         </div>
                         <p class="text-slate-400 text-sm leading-relaxed">
                             Have a software project, academic collaboration, or internship offer? Send a message directly or connect via university channels.
@@ -469,7 +542,7 @@
                                     <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xs text-slate-400 font-mono uppercase">University Email</h4>
+                                    <h4 class="text-xs text-slate-400 font-bold uppercase tracking-wider">University Email</h4>
                                     <p class="text-slate-200 text-sm font-medium" id="contact-email">vishal.bict@ruh.ac.lk</p>
                                 </div>
                             </div>
@@ -479,32 +552,32 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xs text-slate-400 font-mono uppercase">Faculty Location</h4>
+                                    <h4 class="text-xs text-slate-400 font-bold uppercase tracking-wider">Faculty Location</h4>
                                     <p class="text-slate-200 text-sm font-medium">Faculty of Technology, University of Ruhuna, Matara, Sri Lanka</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Contact Form -->
+                    <!-- Right Contact Form -->
                     <div class="lg:col-span-7">
                         <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
                             <div>
-                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Your Name</label>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Your Name</label>
                                 <input type="text" required id="contact-name" placeholder="John Doe" class="w-full px-4 py-3 bg-slate-900 border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500">
                             </div>
 
                             <div>
-                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Your Email</label>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Your Email</label>
                                 <input type="email" required id="contact-user-email" placeholder="john@example.com" class="w-full px-4 py-3 bg-slate-900 border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500">
                             </div>
 
                             <div>
-                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Message</label>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Message</label>
                                 <textarea required id="contact-message" rows="4" placeholder="Hello Vishal, I would like to discuss..." class="w-full px-4 py-3 bg-slate-900 border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500 resize-none"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brand-500 to-brand-accent hover:from-brand-400 hover:to-brand-accentDark text-white font-semibold rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
+                            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brand-500 to-brand-accent hover:from-brand-400 hover:to-brand-accentDark text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-paper-plane"></i>
                                 <span>Send Message</span>
                             </button>
@@ -520,7 +593,7 @@
     <footer class="border-t border-slate-800/80 py-8 mt-20 bg-slate-950/80 text-center text-slate-500 text-sm">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>© <span id="current-year">2026</span> Vishal | Faculty of Technology, University of Ruhuna.</p>
-            <div class="flex items-center space-x-4 text-xs font-mono text-slate-400">
+            <div class="flex items-center space-x-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
                 <span class="text-brand-400"><i class="fa-solid fa-code"></i> HTML5 + CSS + Java + JS</span>
                 <span>•</span>
                 <span>Hosted on GitHub Pages</span>
@@ -539,13 +612,13 @@
                 <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 mx-auto flex items-center justify-center text-2xl shadow-lg border border-brand-500/30">
                     <i class="fa-solid fa-user-shield"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white">Admin Authentication</h3>
+                <h3 class="font-display text-3xl uppercase tracking-wide text-white">Admin Authentication</h3>
                 <p class="text-xs text-slate-400">Log in to manage portfolio content & projects</p>
             </div>
 
             <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Username</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Username</label>
                     <div class="relative">
                         <i class="fa-solid fa-user absolute left-3.5 top-3 text-slate-500 text-sm"></i>
                         <input type="text" id="login-username" required placeholder="Enter username" class="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500">
@@ -553,14 +626,14 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Password</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Password</label>
                     <div class="relative">
                         <i class="fa-solid fa-key absolute left-3.5 top-3 text-slate-500 text-sm"></i>
                         <input type="password" id="login-password" required placeholder="Enter password" class="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500">
                     </div>
                 </div>
 
-                <button type="submit" class="w-full py-3 bg-gradient-to-r from-brand-500 to-brand-accent hover:from-brand-400 hover:to-brand-accentDark text-white font-semibold rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2 text-sm">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-brand-500 to-brand-accent hover:from-brand-400 hover:to-brand-accentDark text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Log In to Admin Panel</span>
                 </button>
