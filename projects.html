@@ -645,16 +645,26 @@
 
         /* Data Loading and Saving */
         function loadAppData() {
+            const base = JSON.parse(JSON.stringify(DEFAULT_DATA));
             const stored = localStorage.getItem('ruhuna_bict_vishal_portfolio');
+            let parsed = null;
             if (stored) {
-                try {
-                    appData = JSON.parse(stored);
-                } catch (e) {
-                    appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
-                }
-            } else {
-                appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+                try { parsed = JSON.parse(stored); } catch (e) { parsed = null; }
             }
+
+            // Defensive merge: fall back to defaults for any section that is
+            // missing or malformed, so a corrupted/partial save from one page
+            // never leaves another page's grid empty.
+            appData = {
+                profile: (parsed && parsed.profile && typeof parsed.profile === 'object') ? { ...base.profile, ...parsed.profile } : base.profile,
+                education: (parsed && Array.isArray(parsed.education) && parsed.education.length) ? parsed.education : base.education,
+                techStack: (parsed && Array.isArray(parsed.techStack) && parsed.techStack.length) ? parsed.techStack : base.techStack,
+                projects: (parsed && Array.isArray(parsed.projects)) ? parsed.projects : base.projects,
+                achievements: (parsed && Array.isArray(parsed.achievements)) ? parsed.achievements : base.achievements
+            };
+
+            // Persist the repaired data so every page stays in sync
+            localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
 
             // Check session authentication state
             isLoggedIn = sessionStorage.getItem('vishal_admin_logged') === 'true';
