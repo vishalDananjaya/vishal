@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "name": "Vishal",
+    "tagline": "BICT Undergraduate | Full-Stack Developer",
+    "bio": "Passionate ICT undergraduate at the University of Ruhuna specializing in full-stack web applications, software engineering, and modern database management systems.",
+    "avatar": "[url=https://ibb.co/Gv5RTRLx][img]https://i.ibb.co/Gv5RTRLx/Whats-App-Image-2026-09-25-at-22-22-48.jpg[/img][/url]",
+    "email": "vishal@bict.ruh.ac.lk",
+    "phone": "0770 258 183",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "whatsapp": "https://wa.me/94771234567",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Information and Communication Technology (BICT Honors)",
+      "institution": "University of Ruhuna - Faculty of Technology",
+      "period": "2023 - Present",
+      "details": "Core focus on Software Engineering, Java OOP, Web Development, MySQL Databases, Computer Networks, and Data Structures.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "degree": "G.C.E. Advanced Level (Technology Stream)",
+      "institution": "Central College, Matara",
+      "period": "2019 - 2021",
+      "details": "Information and Communication Technology (ICT), Engineering Technology, and Science for Technology.",
+      "icon": "fa-school"
+    }
+  ],
+  "techStack": [
+    {
+      "name": "Java",
+      "icon": "fa-brands fa-java",
+      "color": "text-amber-500",
+      "category": "Language"
+    },
+    {
+      "name": "HTML5",
+      "icon": "fa-brands fa-html5",
+      "color": "text-orange-500",
+      "category": "Frontend"
+    },
+    {
+      "name": "CSS3",
+      "icon": "fa-brands fa-css3-alt",
+      "color": "text-blue-400",
+      "category": "Frontend"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "fa-brands fa-js",
+      "color": "text-yellow-400",
+      "category": "Frontend"
+    },
+    {
+      "name": "Python",
+      "icon": "fa-brands fa-python",
+      "color": "text-blue-500",
+      "category": "Language"
+    },
+    {
+      "name": "MySQL / SQL",
+      "icon": "fa-solid fa-database",
+      "color": "text-emerald-400",
+      "category": "Database"
+    },
+    {
+      "name": "Git & GitHub",
+      "icon": "fa-brands fa-github",
+      "color": "text-purple-400",
+      "category": "DevOps"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "fa-solid fa-wind",
+      "color": "text-cyan-400",
+      "category": "Frontend"
+    },
+    {
+      "name": "PHP",
+      "icon": "fa-brands fa-php",
+      "color": "text-indigo-400",
+      "category": "Backend"
+    },
+    {
+      "name": "C++",
+      "icon": "fa-solid fa-code",
+      "color": "text-sky-400",
+      "category": "Language"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "University Management System",
+      "summary": "Comprehensive platform for managing student records and courses.",
+      "desc": "A web platform designed to streamline course registration, grade tracking, and administrative tasks for academic departments.",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+      "tech": "Node.js, Express, PostgreSQL, React",
+      "github": "https://vishaldananjaya.github.io/vishal/index.html#me",
+      "demo": "https://vishaldananjaya.github.io/vishal/index.html#me",
+      "shortDesc": "Library",
+      "fullDesc": "undefined",
+      "tags": [
+        "Java"
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "a1",
+      "title": "Dean's List Academic Honor",
+      "org": "Faculty of Technology, University of Ruhuna",
+      "date": "2025-08-15",
+      "image": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80",
+      "desc": "Recognized for maintaining top academic standing throughout the academic session."
+    }
+  ]
+}
