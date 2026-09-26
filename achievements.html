@@ -504,20 +504,33 @@
 
                 <!-- TAB 4: EXPORT / IMPORT DATA -->
                 <div id="admin-tab-export" class="admin-tab-content hidden space-y-6">
+                    <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-2">
+                        <h4 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>How to publish your changes to everyone</span>
+                        </h4>
+                        <ol class="text-slate-300 text-xs leading-relaxed list-decimal list-inside space-y-1">
+                            <li>Finish editing your projects, achievements, and profile here.</li>
+                            <li>Click <b>Download data.json</b> below.</li>
+                            <li>Go to your GitHub repo → upload the downloaded file, overwriting the existing <code class="text-brand-400 font-mono">data.json</code> at the repo root → commit.</li>
+                            <li>Every visitor, on every device, now sees your update — this file is the single live source of truth for the whole site.</li>
+                        </ol>
+                    </div>
+
                     <div class="p-5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
                         <h4 class="text-base font-bold text-white flex items-center gap-2">
                             <i class="fa-solid fa-file-arrow-down text-brand-400"></i>
-                            <span>Export Data for GitHub Hosting</span>
+                            <span>Publish (Export data.json)</span>
                         </h4>
                         <p class="text-slate-400 text-xs leading-relaxed">
-                            Export your dataset as a <code class="text-brand-400 font-mono">.json</code> file. You can back this up or use it to seed initial static data in your GitHub repository.
+                            Downloads your current edits as <code class="text-brand-400 font-mono">data.json</code> — replace the file of the same name in your GitHub repo to make these changes live for every visitor on every device.
                         </p>
                         <div class="flex flex-wrap gap-3">
                             <button onclick="exportDataJSON()" class="px-4 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white rounded-lg text-xs font-bold flex items-center gap-2 shadow-md">
-                                <i class="fa-solid fa-download"></i> Download Portfolio JSON
+                                <i class="fa-solid fa-download"></i> Download data.json
                             </button>
                             <button onclick="resetToDefaults()" class="px-4 py-2.5 bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500 hover:text-white rounded-lg text-xs font-semibold transition-colors flex items-center gap-2">
-                                <i class="fa-solid fa-rotate-left"></i> Reset to Default BICT Dataset
+                                <i class="fa-solid fa-rotate-left"></i> Discard My Edits (Reload Published Data)
                             </button>
                         </div>
                     </div>
@@ -527,7 +540,7 @@
                             <i class="fa-solid fa-file-arrow-up text-brand-accent"></i>
                             <span>Import Data from Backup JSON</span>
                         </h4>
-                        <p class="text-slate-400 text-xs">Upload a previously exported portfolio JSON file to instantly sync your data.</p>
+                        <p class="text-slate-400 text-xs">Load a previously exported data.json back into this editing session (for example, to keep editing on a different computer). This only loads it here — you still need to Export and upload it to GitHub to publish it.</p>
                         <input type="file" id="import-json-file" accept=".json" class="block w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-slate-200 hover:file:bg-slate-700">
                         <button onclick="importDataJSON()" class="px-4 py-2 bg-brand-accent hover:bg-brand-accentDark text-white rounded-lg text-xs font-bold flex items-center gap-2">
                             <i class="fa-solid fa-upload"></i> Import & Apply Data
@@ -543,7 +556,7 @@
         const AUTH_USER = "vishal";
         const AUTH_PASS = "Vi20056288$";
 
-        const DEFAULT_DATA = {
+        const FALLBACK_DATA = {
             profile: {
                 name: "Vishal",
                 tagline: "BICT Undergraduate Student | University of Ruhuna",
@@ -643,12 +656,33 @@
         let appData = {};
         let isLoggedIn = false;
 
-        function loadAppData() {
-            const base = JSON.parse(JSON.stringify(DEFAULT_DATA));
-            const stored = localStorage.getItem('ruhuna_bict_vishal_portfolio');
+        /* PUBLISHED DATA: data.json in the repo root is the single source of
+           truth for every visitor on every device. It is fetched fresh on
+           every page load (cache: 'no-store') so a phone, a laptop, or a
+           friend's browser all see the same, current content.
+           FALLBACK_DATA (below) is only used if data.json can't be fetched
+           at all (e.g. opening the file locally without a server). */
+        async function fetchPublishedData() {
+            try {
+                const res = await fetch('data.json', { cache: 'no-store' });
+                if (res.ok) return await res.json();
+            } catch (e) { /* ignore, fall back below */ }
+            return JSON.parse(JSON.stringify(FALLBACK_DATA));
+        }
+
+        async function loadAppData() {
+            const base = await fetchPublishedData();
+            isLoggedIn = sessionStorage.getItem('vishal_admin_logged') === 'true';
+
+            /* Only the logged-in admin, on their own browser, ever sees a
+               local unpublished draft layered on top of the published data —
+               regular visitors always get exactly what's in data.json. */
             let parsed = null;
-            if (stored) {
-                try { parsed = JSON.parse(stored); } catch (e) { parsed = null; }
+            if (isLoggedIn) {
+                const stored = localStorage.getItem('ruhuna_bict_vishal_portfolio');
+                if (stored) {
+                    try { parsed = JSON.parse(stored); } catch (e) { parsed = null; }
+                }
             }
 
             appData = {
@@ -659,8 +693,6 @@
                 achievements: (parsed && Array.isArray(parsed.achievements)) ? parsed.achievements : base.achievements
             };
 
-            localStorage.setItem('ruhuna_bict_vishal_portfolio', JSON.stringify(appData));
-            isLoggedIn = sessionStorage.getItem('vishal_admin_logged') === 'true';
             updateAdminButtonState();
         }
 
@@ -1421,11 +1453,11 @@
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "vishal-bict-portfolio.json");
+            downloadAnchor.setAttribute("download", "data.json");
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
-            showToast('Exported vishal-bict-portfolio.json successfully!');
+            showToast('Downloaded data.json — upload it to your GitHub repo (replacing the old one) to publish these changes everywhere.');
         }
 
         function importDataJSON() {
@@ -1455,10 +1487,14 @@
             reader.readAsText(file);
         }
 
-        function resetToDefaults() {
-            appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        async function resetToDefaults() {
+            /* Discards any unpublished local draft and reloads whatever is
+               currently published in data.json (falling back to the built-in
+               sample data only if data.json can't be reached). */
+            localStorage.removeItem('ruhuna_bict_vishal_portfolio');
+            appData = await fetchPublishedData();
             saveAppData();
-            showToast('Reset to default BICT dataset!');
+            showToast('Discarded unpublished edits — reloaded the currently published data.');
             closeAdminModal();
         }
 
@@ -1516,8 +1552,8 @@
             });
         }
 
-        window.onload = function() {
-            loadAppData();
+        window.onload = async function() {
+            await loadAppData();
             renderAllSections();
             setActiveNavLink();
             document.getElementById('current-year').innerText = new Date().getFullYear();
