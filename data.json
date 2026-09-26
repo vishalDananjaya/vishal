@@ -3,13 +3,12 @@
     "name": "Vishal",
     "tagline": "BICT Undergraduate | Full-Stack Developer",
     "bio": "Passionate ICT undergraduate at the University of Ruhuna specializing in full-stack web applications, software engineering, and modern database management systems.",
-    "avatar": "[url=https://ibb.co/Gv5RTRLx][img]https://i.ibb.co/Gv5RTRLx/Whats-App-Image-2026-09-25-at-22-22-48.jpg[/img][/url]",
+    "avatar": "https://i.ibb.co/Gv5RTRLx/Whats-App-Image-2026-09-25-at-22-22-48.jpg",
     "email": "vishal@bict.ruh.ac.lk",
     "phone": "0770 258 183",
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
-    "whatsapp": "https://wa.me/94771234567",
-    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+    "whatsapp": "https://wa.me/94771234567"
   },
   "education": [
     {
@@ -93,27 +92,29 @@
     {
       "id": "p1",
       "title": "University Management System",
-      "summary": "Comprehensive platform for managing student records and courses.",
-      "desc": "A web platform designed to streamline course registration, grade tracking, and administrative tasks for academic departments.",
+      "shortDesc": "Comprehensive platform for managing student records and courses.",
+      "fullDesc": "A web platform designed to streamline course registration, grade tracking, and administrative tasks for academic departments.",
       "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
-      "tech": "Node.js, Express, PostgreSQL, React",
+      "tags": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "React"
+      ],
       "github": "https://vishaldananjaya.github.io/vishal/index.html#me",
       "demo": "https://vishaldananjaya.github.io/vishal/index.html#me",
-      "shortDesc": "Library",
-      "fullDesc": "undefined",
-      "tags": [
-        "Java"
-      ]
+      "date": ""
     }
   ],
   "achievements": [
     {
       "id": "a1",
       "title": "Dean's List Academic Honor",
-      "org": "Faculty of Technology, University of Ruhuna",
+      "issuer": "Faculty of Technology, University of Ruhuna",
       "date": "2025-08-15",
-      "image": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80",
-      "desc": "Recognized for maintaining top academic standing throughout the academic session."
+      "shortDesc": "Recognized for maintaining top academic standing throughout the academic session.",
+      "fullDesc": "Recognized for maintaining top academic standing throughout the academic session.",
+      "image": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80"
     }
   ]
 }
