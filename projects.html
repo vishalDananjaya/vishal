@@ -504,6 +504,31 @@
 
                 <!-- TAB 4: EXPORT / IMPORT DATA -->
                 <div id="admin-tab-export" class="admin-tab-content hidden space-y-6">
+
+                    <div class="p-5 bg-slate-950/60 border border-brand-500/40 rounded-xl space-y-4">
+                        <h4 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fa-brands fa-github text-brand-400"></i>
+                            <span>Publish to GitHub (one click, all devices)</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Saves your edits and new photos (into the <code class="text-brand-400 font-mono">iimages</code> folder) directly to your repo. Create a
+                            <b>fine-grained token</b> at GitHub → Settings → Developer settings → Personal access tokens, limited to this one repository with
+                            <b>Contents: Read and write</b>. It is stored only in this browser.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <input id="gh-owner" placeholder="GitHub username" class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white">
+                            <input id="gh-repo" placeholder="Repository name" class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white">
+                            <input id="gh-branch" placeholder="Branch (main)" class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white">
+                            <input id="gh-token" type="password" placeholder="Token (github_pat_...)" class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white">
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button id="gh-publish-btn" onclick="publishToGitHub()" class="px-4 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white rounded-lg text-xs font-bold flex items-center gap-2 shadow-md">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Publish to GitHub
+                            </button>
+                            <button onclick="savePublishSettings()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-semibold">Save settings</button>
+                            <span id="gh-status" class="text-xs text-slate-400"></span>
+                        </div>
+                    </div>
                     <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-2">
                         <h4 class="text-sm font-bold text-amber-300 flex items-center gap-2">
                             <i class="fa-solid fa-circle-info"></i>
@@ -520,7 +545,7 @@
                     <div class="p-5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4">
                         <h4 class="text-base font-bold text-white flex items-center gap-2">
                             <i class="fa-solid fa-file-arrow-down text-brand-400"></i>
-                            <span>Publish (Export data.json)</span>
+                            <span>Manual publish (download data.json)</span>
                         </h4>
                         <p class="text-slate-400 text-xs leading-relaxed">
                             Downloads your current edits as <code class="text-brand-400 font-mono">data.json</code> — replace the file of the same name in your GitHub repo to make these changes live for every visitor on every device.
@@ -664,7 +689,7 @@
            at all (e.g. opening the file locally without a server). */
         async function fetchPublishedData() {
             try {
-                const res = await fetch('data.json', { cache: 'no-store' });
+                const res = await fetch('data.json?v=' + Date.now(), { cache: 'no-store' });
                 if (res.ok) return await res.json();
             } catch (e) { /* ignore, fall back below */ }
             return JSON.parse(JSON.stringify(FALLBACK_DATA));
@@ -1571,5 +1596,6 @@
             }
         };
     </script>
+<script src="publish.js"></script>
 </body>
 </html>
